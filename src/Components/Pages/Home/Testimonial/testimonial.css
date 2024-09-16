@@ -1,0 +1,74 @@
+.testimonial{
+    background-color: #495E57;
+}
+.testimonial h1{
+    text-align: center;
+    padding-top: 10%;
+    color: white;
+    font-size: 150%;
+}
+.testimonial h2{
+    font-weight: bold;
+    color: #495E57;
+    font-size: 130%;
+
+}
+.testimonial img{
+    margin-top: 10%;
+    padding-top: 0;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.all_reviews{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 5%;
+}
+.review{
+    background-color: white;
+    border-radius: 8%;
+    width: 100%;
+    margin-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.review p{
+    font-size: 100%;
+    width: 90%;
+    padding-left: 8%;
+    padding-bottom: 10%;
+    color: #495E57;
+    font-weight: bold;
+}
+.stars{
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    display: flex;
+    gap: 0;
+}
+
+@media screen and (min-width:1000px) {
+    .testimonial h1{
+        font-size: 180%;
+    }
+    .all_reviews{
+        display: flex;
+        justify-content: space-around;
+    }
+    .review{
+        width: 20%;
+        margin-left: 1%;
+    }
+    .review img{
+        width: 100px;
+        height: 100px;
+    }
+    .review p{
+        font-size: 80%;
+    }
+}

@@ -1,0 +1,177 @@
+.menu_special_start{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.menu_button{
+    margin-top: 4rem;
+    margin-left: 18rem;
+    width: 25%;
+    height: 40%;
+    padding: .3rem;
+}
+.week_special{
+    color: #495E57;
+    font-size: 140%;
+    margin-left: 10%;
+}
+.menu_special_three{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.menu_food{
+    width: 65%;
+    height: auto;
+    border-radius: 10%;
+    background-color:lightgray;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    overflow: hidden;
+}
+.menu_food img:hover{
+    transform: scale(1.1);
+    transition: transform .3s ease;
+}
+.menu_food img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 13rem;
+    border-radius: 10%;
+}
+.basic_info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: .5rem;
+}
+.name{
+    color: #495E57;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    margin-top: 0;
+}
+.price{
+    color: #EE9972;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 0;
+}
+.desc{
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+    color: #495E57;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    height: 18%;
+    padding: 0% 5%;
+}
+.orderonline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-left: 15%;
+    padding-bottom: 5%;
+}
+.orderonline:hover *{
+    color: #F4CE14;
+}
+.orderonline label{
+    padding-top: 0rem;
+    font-size: medium;
+    color: #495E57;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media screen and (min-width:1000px) and (max-width:1200px){
+    .name{
+        font-size: 80%;
+    }
+    .desc{
+        font-size: 70%;
+    }
+    .orderonline label{
+        font-size: 70%;
+    }
+}
+@media screen and (max-width:999px) {
+    *{
+        width: 100%;
+    }
+    .week_special{
+        margin-left: 5%;
+        text-align: center;
+        margin-top: 8%;
+    }
+    .menu_special_start{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .menu_special_three{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu_food{
+        margin-bottom: 3%;
+    }
+    .menu_button{
+        padding: 2%;
+        margin-left: 0 ;
+    }
+    .orderonline{
+        position: relative;
+        bottom: 1rem;
+        padding-bottom: 0;
+    }
+}
+@media screen and (max-width:500px){
+    .menu_special_start{
+        text-align: center;
+    }
+    .menu_button{
+        width: 40%;
+        padding: 3%;
+        margin-left: 3%;
+        margin-top: 5%;
+    }
+    .menu_special_three{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .menu_food{
+        margin-top: 5%;
+        height: 93%;
+    }
+    .name,.price{
+        font-size: 80%;
+    }
+    .desc{
+        font-size: 70%;
+        padding-bottom: 0%;
+    }
+    .orderonline{
+        position: relative;
+        bottom: 5%;
+        padding-top: 0;
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .orderonline label{
+        font-size: 70%;
+        padding-bottom: 1rem;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .bikeicon{
+        display: none;
+    }
+}

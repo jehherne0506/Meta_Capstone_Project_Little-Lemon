@@ -1,0 +1,50 @@
+.intro_all_texts{
+    width: 92%;
+    margin-left: 5%;
+    margin-right: 3%;
+}
+h1{
+    font-size: 250%;
+}
+.chicago{
+    color: #495E57;
+}
+.intro_text{
+    padding-top: 8%;
+    color: #495E57;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    line-height: 130%;
+}
+.chef_images img{
+    padding-top: 0;
+    margin-top: 5%;
+    width: 92%;
+    border-radius: 12%;
+    margin-left: 5%;
+    margin-right: 3%;
+}
+@media screen and (min-width:700px){
+    .chef_images{
+        display: flex;
+        width: 46%;
+        margin-left: 4%;
+    }
+}
+@media screen and (min-width:1300px) {
+    .chef_images{
+        display: block;
+        height: 70%;
+    }
+    .chef_images img{
+        width: 160%;
+    }
+    .aboutus{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .intro_text{
+        padding-top: 15%;
+        line-height: 180%;
+        font-size: 130%;
+    }
+}
