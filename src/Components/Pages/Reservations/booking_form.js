@@ -52,7 +52,6 @@ function BookingForm(){
     useEffect(()=>{
         const date = new Date(booking_data.date)
         const date_available = fetchAPI(date)
-        console.log(date_available)
         setAvailable_times(date_available)
     },[booking_data.date])
     return(
