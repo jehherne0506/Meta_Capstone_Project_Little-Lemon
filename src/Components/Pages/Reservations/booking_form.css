@@ -65,6 +65,9 @@ select{
 #name{
     margin-bottom: 5%;
 }
+.contact {
+    font-size: 60%;
+}
 
 @media screen and (max-width:700px) {
     form{
@@ -76,9 +79,6 @@ select{
     }
     .forms label{
         font-size: 90%;
-    }
-    .contact {
-        font-size: 60%;
     }
     .forms button{
         font-size: 50%;
