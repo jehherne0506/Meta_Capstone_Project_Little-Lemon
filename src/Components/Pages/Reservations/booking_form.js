@@ -4,13 +4,13 @@ import {  useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {  useFormik } from 'formik'
 import * as Yup from 'yup'
-import Confirmation from './confirmation'
 import 'react-phone-input-2/lib/style.css'
 
 function BookingForm(){
     const [booking_data,setBooking_Data] = useState({date:'',time:'',guests:'',occasion:'',requests:''})
     const [available_times,setAvailable_times] = useState([])
-    const [ischecked,setIsChecked] = useState(false)
+    const [ischecked,setIsChecked] = useState()
+    const [firstchecked,setFirstchecked] = useState(true)
     const navigate = useNavigate()
     const formik = useFormik({
         initialValues:{
@@ -58,6 +58,16 @@ function BookingForm(){
         <div className='forms'>
             <form onSubmit={formik.handleSubmit}>
                 <h1>Reservation Details</h1>
+                <div className='indoor_outdoor'>
+                    <div className='two_check'>
+                        <input htmlFor='indoor' type='checkbox' checked={firstchecked} onChange={()=>(setFirstchecked(true))} />
+                        <label id='indoor'>Indoor</label>
+                    </div>
+                    <div className='two_check'>
+                        <input htmlFor='outdoor' type='checkbox' checked={!firstchecked} onChange={()=>(setFirstchecked(false))} />
+                        <label id='outdoor'>Outdoor</label>
+                    </div>
+                </div>
                 <label htmlFor='date'>Date</label>
                 <input type="date" id="date" value={booking_data.date} min={getTodayDate()} onChange={(e)=>{setBooking_Data({...booking_data,date:e.target.value})}} />
                 <label htmlFor='time'>Time</label>
@@ -95,7 +105,7 @@ function BookingForm(){
                 <label htmlFor='phoneNumber'>Phone Number</label>
                 <br></br>
                 <div className='contact'>
-                <label>No - Required</label>
+                <label id='no-'>No - Required</label>
                 </div>
                 <input className='personal_input' type='text' id='phoneNumber' value={formik.values.phoneNumber} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                 {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
@@ -103,6 +113,10 @@ function BookingForm(){
                 ) : null}
                 <div className='contact'>
                 <label>We Will Only Contact You Through Whatsapp</label>
+                </div>
+                <div className='policy'>
+                    <input id='policy' type='checkbox' required />
+                    <label htmlFor='policy' id='policy_word'>*I Agree to The Little Lemon Policy</label>
                 </div>
                 <button disabled={booking_data.date==='' || booking_data.time==='No Time Selected'} type="submit">Make Your Reservation</button>
             </form>

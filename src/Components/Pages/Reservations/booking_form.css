@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 form{
     width: 30%;
@@ -11,10 +12,12 @@ form{
 input{
     height: 30px;
     margin-bottom: 5%;
+    margin-top: 2%;
 }
 select{
     height: 30px;
     margin-bottom: 5%;
+    margin-top: 2%;
 }
 .forms h1{
     color: #495E57;
@@ -41,9 +44,10 @@ select{
     display: grid;
     grid-template-columns: 10% 90%;
     align-items: center;
-    text-align: center;
+    text-align: left;
     font-size: 60%;
     margin-bottom: 5%;
+    margin-top: 2%;
 }
 .check_box label{
     padding-top: 0;
@@ -51,15 +55,13 @@ select{
 #phone_number{
     margin-bottom: 0;
 }
-.contact{
-    font-size: 80%;
-}
 .error{
     font-size: 100%;
     color: red;
     padding-bottom: 5%;
 }
 .personal_input{
+    margin-top: 2%;
     margin-bottom: 0;
 }
 #name{
@@ -71,8 +73,47 @@ select{
 textarea{
     height: 200px;
 }
+.two_check{
+    display: flex;
+    height: 50px;
+    width: 130px;
+    font-size: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.two_check input{
+    margin-bottom: 0;
+}
+.two_check label{
+    padding-top: 0;
+}
+.indoor_outdoor{
+    display: flex;
+    justify-content: space-between;
+}
+.policy{
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 10%;
+}
+.policy input{
+    margin-bottom: 0;
+    height: 20px;
+}
+.policy label{
+    font-size: 100%;
+    padding-top: 0;
+    text-align: left;
+}
+#phoneNumber{
+    margin-top: 3%;
+}
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:1000px) {
     form{
         width: 50%;
     }
@@ -92,5 +133,33 @@ textarea{
     }
     .error{
         font-size: 60%;
+    }
+    .policy{
+        left: 0;
+    }
+    .policy label{
+        font-size: 60%;
+        text-align: center;
+    }
+}
+@media screen and (max-width:500px) {
+    form{
+        width: 85%;
+    }
+}
+@media screen and (min-width:600px) and (max-width:1200px) {
+    .policy label{
+        text-align: left;
+    }
+    #check_email,#no-{
+        font-size: 130%;
+    }
+    .contact label{
+        font-size: 130%;
+    }
+}
+@media screen and (min-width:200px) and (max-width:600px) {
+    .policy label{
+        text-align: left;
     }
 }
