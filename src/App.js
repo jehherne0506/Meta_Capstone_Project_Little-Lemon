@@ -7,6 +7,8 @@ import ShortMenu from "./Components/Pages/Home/Short Menu/short_menu";
 import Testimonial from "./Components/Pages/Home/Testimonial/testimonial";
 import AboutUs from "./Components/Pages/Home/About/aboutus";
 import Footer from "./Components/Pages/Home/Footer/footer";
+import Reservation from "./Components/Pages/Reservations/reservation";
+import Confirmation from "./Components/Pages/Reservations/confirmation"
 
 function App() {
   useEffect(()=>{
@@ -24,11 +26,13 @@ function App() {
     </Helmet>
     <Header />
       <Routes>
-            <Route path="/" element={<><Intro /> <ShortMenu /> <Testimonial /><AboutUs /><Footer /></>} />
+            <Route path="/" element={<><Intro /> <ShortMenu /> <Testimonial /><AboutUs /></>} />
             <Route path="/menu" element={<h1></h1>} />
-            <Route path="/reservations" element={<h1></h1>} />
+            <Route path="/reservations" element={<Reservation />} />
             <Route path="/order_delivery" element={<h1></h1>} />
+            <Route path="confirmation" element={<Confirmation />} />
       </Routes>
+    <Footer />
     </>
   );
 }

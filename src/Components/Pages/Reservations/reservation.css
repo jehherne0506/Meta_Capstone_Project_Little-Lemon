@@ -1,0 +1,16 @@
+#reservation_h1{
+    text-align: center;
+    background-color: #495E57;
+    color: white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 0%;
+    font-size: 200%;
+    position: relative;
+    bottom: 1.2rem;
+}
+@media screen and (max-width:1100px){
+    #reservation_h1{
+        margin-top: 5%;
+    }
+}

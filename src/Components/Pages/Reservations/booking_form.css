@@ -1,0 +1,93 @@
+.forms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    width: 30%;
+    text-align: center;
+}
+input{
+    height: 30px;
+    margin-bottom: 5%;
+}
+select{
+    height: 30px;
+    margin-bottom: 5%;
+}
+.forms h1{
+    color: #495E57;
+    margin-bottom: 3%;
+    text-align: center;
+}
+.forms button{
+    width: 80%;
+    padding: 2% 0;
+    margin-top: 5%;
+}
+.forms button:disabled{
+    opacity: 50%;
+}
+.forms button:disabled:hover{
+    background-color: #F4CE14;
+    color: #495E57;
+}
+#checkbox{
+    margin: 0;
+    height: 20px;
+}
+.check_box{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    align-items: center;
+    text-align: center;
+    font-size: 60%;
+    margin-bottom: 5%;
+}
+.check_box label{
+    padding-top: 0;
+}
+#phone_number{
+    margin-bottom: 0;
+}
+.contact{
+    font-size: 80%;
+}
+.error{
+    font-size: 100%;
+    color: red;
+    padding-bottom: 5%;
+}
+.personal_input{
+    margin-bottom: 0;
+}
+#name{
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width:700px) {
+    form{
+        width: 50%;
+    }
+    .forms h1{
+        font-size: 100%;
+        margin-bottom: 10%;
+    }
+    .forms label{
+        font-size: 90%;
+    }
+    .contact {
+        font-size: 60%;
+    }
+    .forms button{
+        font-size: 50%;
+    }
+    #check_email{
+        padding-top: 3%;
+        padding-left: 3%;
+    }
+    .error{
+        font-size: 60%;
+    }
+}
