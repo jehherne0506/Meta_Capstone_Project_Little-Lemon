@@ -8,7 +8,7 @@ import Confirmation from './confirmation'
 import 'react-phone-input-2/lib/style.css'
 
 function BookingForm(){
-    const [booking_data,setBooking_Data] = useState({date:'',time:'',guests:'',occasion:''})
+    const [booking_data,setBooking_Data] = useState({date:'',time:'',guests:'',occasion:'',requests:''})
     const [available_times,setAvailable_times] = useState([])
     const [ischecked,setIsChecked] = useState(false)
     const navigate = useNavigate()
@@ -75,6 +75,8 @@ function BookingForm(){
                     <option>Anniversary</option>
                     <option>Other</option>
                 </select>
+                <label htmlFor='additional_requests'>Additional Requests (Optional)</label>
+                <textarea id='additional_requests' onChange={(e)=>{setBooking_Data({...booking_data,requests:e.target.value})}} />
                 <h1>Personal Details</h1>
                 <label htmlFor='name'>Name</label>
                 <input className='personal_input' type='text' id='name' value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />

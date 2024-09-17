@@ -68,6 +68,9 @@ select{
 .contact {
     font-size: 60%;
 }
+textarea{
+    height: 200px;
+}
 
 @media screen and (max-width:700px) {
     form{
