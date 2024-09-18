@@ -46,7 +46,7 @@ a{
 }
 a:focus{
     padding-top: 4rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.2rem;
     background-color: #F4CE14;
 }
 .close{
