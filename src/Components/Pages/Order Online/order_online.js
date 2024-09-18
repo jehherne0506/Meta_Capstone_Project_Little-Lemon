@@ -67,7 +67,7 @@ function Order_Online(props){
                 <br></br>
                 <hr></hr>
                 <h2>Order Total: ${(totalPrice+15).toFixed(2)}</h2>
-                <button onClick={()=>{
+                <button disabled={totalItems===0?true:false} onClick={()=>{
                     const total = `${(totalPrice+15).toFixed(2)}`
                     navigate('/confirmation_order',{state:{cost:total}})}}>Place Order</button>
             </div>

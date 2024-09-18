@@ -57,7 +57,7 @@
 .eachfood button{
     height: 40px;
     width: 30px;
-    padding: 0 5%;
+    padding: 0 2%;
 }
 .order_summary{
     display: flex;
@@ -70,6 +70,11 @@
 }
 .order_summary button{
     margin-top: 5%;
+    padding: 2%;
+    font-size: 90%;
+}
+.order_summary button:disabled{
+    opacity: 50%;
 }
 @media screen and (max-width:710px) {
     .grid_row h2{
@@ -98,6 +103,7 @@
 }
 @media screen and (min-width:600px) {
     .order_summary button{
-        padding: 2%;
+        padding: .5%;
+        font-size:110%;
     }
 }

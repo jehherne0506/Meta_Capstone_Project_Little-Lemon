@@ -125,7 +125,7 @@ textarea{
         font-size: 90%;
     }
     .forms button{
-        font-size: 50%;
+        font-size: 90%;
     }
     #check_email{
         padding-top: 3%;
@@ -161,5 +161,9 @@ textarea{
 @media screen and (min-width:200px) and (max-width:600px) {
     .policy label{
         text-align: left;
+    }
+    .forms button{
+        font-size: 90%;
+        padding: 2%;
     }
 }
