@@ -12,6 +12,8 @@ ul{
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
     text-align: center;
+    align-items: center;
+    height: 100%;
 }
 
 li{
@@ -22,8 +24,10 @@ li{
     font-size: 50%;
 }
 
-li:hover{
+a:hover{
     background-color: #F4CE14;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .active{

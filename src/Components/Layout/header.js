@@ -6,14 +6,14 @@ import HamburgerMenu from "../Pages/Home/Header/hamburger_menu";
 import {  useState } from 'react'
 
 
-function Header(){
+function Header(props){
     const [open,withOpen] = useState(false)
     if (open){
         return (
             <>
                 <div className="header">
                     <HeaderLogoImg />
-                    <HeaderCartImg />
+                    <HeaderCartImg cartnum={props.cartnum} />
                     <HamburgerMenu value={open} setValue={withOpen}/>
                 </div>
                 <Navbar classname='open' value={open} setValue={withOpen} />
@@ -26,7 +26,7 @@ function Header(){
             <div className="header">
                 <HeaderLogoImg />
                 <Navbar classname='close'/>
-                <HeaderCartImg />
+                <HeaderCartImg cartnum={props.cartnum}/>
                 <HamburgerMenu value={open} setValue={withOpen}/>
             </div>
         )

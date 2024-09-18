@@ -1,0 +1,103 @@
+.order_online h1{
+    text-align: center;
+    background-color: #495E56;
+    margin-top: 0;
+    padding: 3% 0;
+    position: relative;
+    bottom: 1.2rem;
+    color: white;
+}
+.order_online .grid_row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 80%;
+    margin: 0 10% ;
+    margin-bottom: 5%;
+    width: 80%;
+}
+.order_online .grid_row h2{
+    color: #495E56;
+}
+.eachfood{
+    margin: 0 10%;
+    width: 80%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.eachfood img{
+    width: 200px;
+    height: 200px;
+}
+.eachfood h2,.eachfood h3{
+    color: black;
+    font-size: 140%;
+}
+.eachfood h3{
+    padding-bottom: 3%;
+    padding-right: 0;
+}
+.eachfood .gridrow{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.gridrow h3{
+    padding: 0;
+    margin-top: 0;
+}
+.eachfood button{
+    height: 40px;
+    width: 30px;
+    padding: 0 5%;
+}
+.order_summary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.order_summary h2{
+    text-align: center;
+    color: #495E56;
+}
+.order_summary button{
+    margin-top: 5%;
+}
+@media screen and (max-width:710px) {
+    .grid_row h2{
+        font-size: 150%;
+    }
+    .order_online h1{
+        bottom: 0;
+    }
+    .eachfood img{
+        width: 80px;
+        height: 80px;
+    }
+    .eachfood h2,.eachfood h3{
+        font-size: 80%;
+        justify-content: center;
+    }
+    .eachfood .gridrow{
+        justify-items: center;
+        width: 100%;
+        padding-left: 0;
+    }
+    .order_summary h2{
+        font-size: 110%;
+    }
+
+}
+@media screen and (min-width:600px) {
+    .order_summary button{
+        padding: 2%;
+    }
+}

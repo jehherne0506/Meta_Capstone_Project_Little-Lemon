@@ -1,6 +1,6 @@
 import {  Route,Routes } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
-import {  useEffect } from 'react'
+import {  useState,useEffect } from 'react'
 import Header from "./Components/Layout/header";
 import Intro from "./Components/Pages/Home/Short Intro/short_intro";
 import ShortMenu from "./Components/Pages/Home/Short Menu/short_menu";
@@ -8,9 +8,14 @@ import Testimonial from "./Components/Pages/Home/Testimonial/testimonial";
 import AboutUs from "./Components/Pages/Home/About/aboutus";
 import Footer from "./Components/Pages/Home/Footer/footer";
 import Reservation from "./Components/Pages/Reservations/reservation";
-import Confirmation from "./Components/Pages/Reservations/confirmation"
+import Confirmation_Reservation from "./Components/Pages/Reservations/confirmation_reservation";
+import Menu from "./Components/Pages/Menu/menu";
+import Order_Online from "./Components/Pages/Order Online/order_online";
+import Confirmation_Order from "./Components/Pages/Order Online/confirmation_order";
 
 function App() {
+  const [cartnum,setCartnum] = useState(0)
+  const [cartinfo,setCartinfo] = useState([])
   useEffect(()=>{
     document.title='Little Lemon'
   })
@@ -24,13 +29,14 @@ function App() {
       <meta name="og:description" content="We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."/>
       <meta name="og:image" content="https://cdn.dribbble.com/userupload/4149863/file/original-b59dcb3c6b4dcb6f87e9dc0b9a0e5a23.png"/>
     </Helmet>
-    <Header />
+    <Header cartnum={cartnum} />
       <Routes>
             <Route path="/" element={<><Intro /> <ShortMenu /> <Testimonial /><AboutUs /></>} />
-            <Route path="/menu" element={<h1></h1>} />
+            <Route path="/menu" element={<Menu cartnum={cartnum} setCartnum={setCartnum} cartinfo={cartinfo} setCartinfo={setCartinfo} />} />
             <Route path="/reservations" element={<Reservation />} />
-            <Route path="/order_delivery" element={<h1></h1>} />
-            <Route path="confirmation" element={<Confirmation />} />
+            <Route path="/order_online" element={<Order_Online cartinfo={cartinfo} setCartinfo={setCartinfo} />} />
+            <Route path="/confirmation_reservation" element={<Confirmation_Reservation />} />
+            <Route path="/confirmation_order" element={<Confirmation_Order setCartnum={setCartnum} setCartinfo={setCartinfo} />} />
       </Routes>
     <Footer />
     </>

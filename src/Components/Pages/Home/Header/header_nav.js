@@ -11,7 +11,7 @@ function Navbar(props){
                         <li><NavLink to={"/"}>HOME</NavLink></li>
                         <li><NavLink to={"/menu"}>MENU</NavLink></li>
                         <li><NavLink to={"/reservations"}>RESERVATIONS</NavLink></li>
-                        <li><NavLink to={"/order_delivery"}>ORDER ONLINE</NavLink></li>
+                        <li><NavLink to={"/order_online"}>ORDER ONLINE</NavLink></li>
                     </ul>
                 </nav>
             </>

@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import 'react-phone-input-2/lib/style.css'
 
 function BookingForm(){
-    const [booking_data,setBooking_Data] = useState({date:'',time:'',guests:'',occasion:'',requests:''})
+    const [booking_data,setBooking_Data] = useState({date:'',time:'',guests:1,occasion:'Birthday',requests:''})
     const [available_times,setAvailable_times] = useState([])
     const [ischecked,setIsChecked] = useState()
     const [firstchecked,setFirstchecked] = useState(true)
@@ -30,8 +30,8 @@ function BookingForm(){
         }),
         onSubmit: ()=>{
             if (submitAPI(booking_data)){
-                navigate('/confirmation',{
-                    state:{name:formik.values.name, date:booking_data.date, time:booking_data.time, guests:booking_data.guests, occasion:booking_data.occasion}
+                navigate('/confirmation_reservation',{
+                    state:{name:formik.values.name, date:booking_data.date, time:booking_data.time, guests:booking_data.guests, occasion:booking_data.occasion, locations:firstchecked}
                 })
             }
         }

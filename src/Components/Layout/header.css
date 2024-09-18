@@ -11,23 +11,30 @@
 .margin_img{
     width: 50%;
     padding-top:1%;
-    padding-bottom: 3%;
+    padding-bottom: 4%;
     margin-left: 10rem;
 }
 
 label{
     color: #495E57;
-    padding-top: 3.25rem;
     font-size: 150%;
     font-weight: bold;
 }
-
+.cart{
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+.cart label{
+    padding-top: 0;
+}
 ul{
     margin-right: 9rem;
 }
 ul li{
     color: #495E57;
-    padding-top: 3.5rem;
     font-size: 120%;
     font-weight: bold;
 }
@@ -37,9 +44,6 @@ ul li{
 @media screen and (max-width:1100px){
     *{
         width: 100%;
-    }
-    .cart{
-        padding-top: 50%;
     }
     .margin_img{
         align-items: center;
@@ -55,12 +59,12 @@ ul li{
 
     .header{
         display: grid;
-        grid-template-columns: 4fr .75fr .75fr .80fr;
+        grid-template-columns: 4fr .75fr .75fr;
 
     }
     .hamburgerMenu{
-        display: block;
-        padding-top: 40%;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -83,12 +87,6 @@ ul li{
     }
     label{
         padding-top: 1.4rem;
-    }
-
-    .header{
-        display: grid;
-        grid-template-columns: 4fr .75fr .75fr .80fr;
-
     }
 }
 *{

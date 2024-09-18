@@ -22,7 +22,7 @@ function ShortMenu(){
                     <h2 className="price">$12.99</h2>
                 </div>
                 <p className="desc">The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
-                <div className="orderonline" onClick={()=>{navigate("/order_online")}}>
+                <div className="orderonline" onClick={()=>{navigate("/menu")}}>
                     <label>Order for Delivery</label>
                     <FontAwesomeIcon icon={faMotorcycle} size="xl" color="#495E57" className="bikeicon"  />
                 </div>
@@ -34,7 +34,7 @@ function ShortMenu(){
                     <h2 className="price">$9.99</h2>
                 </div>
                 <p className="desc">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</p>
-                <div className="orderonline" onClick={()=>{navigate("/order_online")}}>
+                <div className="orderonline" onClick={()=>{navigate("/menu")}}>
                     <label>Order for Delivery</label>
                     <FontAwesomeIcon icon={faMotorcycle} size="xl" color="#495E57" className="bikeicon" />
                 </div>
@@ -46,7 +46,7 @@ function ShortMenu(){
                     <h2 className='price'>$7.99</h2>
                 </div>
                 <p className="desc">This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
-                <div className="orderonline" onClick={()=>{navigate("/order_online")}}>
+                <div className="orderonline" onClick={()=>{navigate("/menu")}}>
                     <label>Order for Delivery</label>
                     <FontAwesomeIcon icon={faMotorcycle} size="xl" color="#495E57" className="bikeicon" />
                 </div>
