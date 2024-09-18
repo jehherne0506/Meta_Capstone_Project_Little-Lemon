@@ -8,11 +8,14 @@ import thirdimg from '../../../Images/lemon_dessert.jpg'
 
 function ShortMenu(){
     const navigate = useNavigate()
+    const scrollToTop = () =>{
+        window.scrollTo({top:0,behavior:"smooth"})
+    }
     return(
     <>
         <div className="menu_special_start">
             <h1 className="week_special">This Week Specials!</h1>
-            <button className="menu_button" onClick={()=>{navigate("/menu")}}>Online Menu</button>
+            <button className="menu_button" onClick={()=>{navigate("/menu"); scrollToTop()}}>Online Menu</button>
         </div>
         <div className="menu_special_three">
             <div className="menu_food">
