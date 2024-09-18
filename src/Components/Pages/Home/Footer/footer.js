@@ -14,6 +14,9 @@ function Footer(){
     const navigate_site = (props) =>{
         window.location.href = `https://${props}.com`
     }
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
     return(
         <div className='footers'>
             <>
@@ -21,10 +24,10 @@ function Footer(){
             </>
             <div className='flex_column'>
                 <h2>SITEMAP</h2>
-                <h3 className='nav_inner_site' onClick={()=>{navigate('/')}}>Home</h3>
-                <h3 className='nav_inner_site' onClick={()=>{navigate('/menu')}}>Menu</h3>
-                <h3 className='nav_inner_site' onClick={()=>{navigate('/reservations')}}>Reservations</h3>
-                <h3 className='nav_inner_site' onClick={()=>{navigate('/order_online')}}>Order Online</h3>
+                <h3 className='nav_inner_site' onClick={()=>{navigate('/'); scrollToTop()}}>Home</h3>
+                <h3 className='nav_inner_site' onClick={()=>{navigate('/menu'); scrollToTop()}}>Menu</h3>
+                <h3 className='nav_inner_site' onClick={()=>{navigate('/reservations'); scrollToTop()}}>Reservations</h3>
+                <h3 className='nav_inner_site' onClick={()=>{navigate('/order_online'); scrollToTop()}}>Order Online</h3>
             </div>
             <div className='flex_column'>
                 <h2>CONTACT US</h2>
