@@ -56,3 +56,23 @@
     color: #495E56;
     padding-bottom: 5%;
 }
+.search{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.search input{
+    margin: 0;
+}
+.search label{
+    font-size: 100%;
+    text-align: end;
+    margin-right: 3%;
+    padding-top: 0;
+}
+@media screen and (max-width:500px) {
+    .search{
+        width: 70%;
+    }
+}

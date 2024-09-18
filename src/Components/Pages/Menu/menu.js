@@ -17,7 +17,7 @@ import vegeparadise from '../../Images/veggie.jpg'
 import chocolateshake from '../../Images/choclate shake.jpg'
 import coffee from '../../Images/coffe.jpg'
 import strawberryshake from '../../Images/strawberry shake.jpg'
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
 
 function Menu(props){
     const all_foods = [
@@ -40,41 +40,87 @@ function Menu(props){
         {name:'Chocolate Shake',type:'Beverage',price_show:'$7.99',price_cal:7.99,link:chocolateshake},
         {name:'Strawberry Shake',type:'Beverage',price_show:'$7.99',price_cal:7.99,link:strawberryshake},
     ]
+    const [search,setSearch] = useState('')
     useEffect(()=>{
         console.log(props.cartinfo)
     },[props.cartinfo])
-    return(
-        <div className='menu'>
-            <h1>Little Lemon Menu</h1>
-            <div className="all_foods">
-                {all_foods.map(each_food=>{
-                    return (
-                        <div className="each_food">
-                            <img src={each_food.link} alt='Little Lemon Food' />
-                            <h2>{each_food.name}</h2>
-                            <h3>{each_food.type}</h3>
-                            <div className='flex_row'>
-                                <h3>{each_food.price_show}</h3>
-                                <button onClick={()=>{
-                                    let found = false
-                                    props.setCartnum(props.cartnum+1)
-                                    props.cartinfo.forEach(cart_food => {
-                                        if(cart_food.name===each_food.name){
-                                            cart_food.value=cart_food.value+1
-                                            found = true
+    if(search===''){
+        return(
+            <div className='menu'>
+                <h1>Little Lemon Menu</h1>
+                <div className='search'>
+                    <label>Search</label>
+                    <input type='text' value={search} onChange={(e)=>{setSearch(e.target.value)}} />
+                </div>
+                <div className="all_foods">
+                    {all_foods.map(each_food=>{
+                        return (
+                            <div className="each_food">
+                                <img src={each_food.link} alt='Little Lemon Food' />
+                                <h2>{each_food.name}</h2>
+                                <h3>{each_food.type}</h3>
+                                <div className='flex_row'>
+                                    <h3>{each_food.price_show}</h3>
+                                    <button onClick={()=>{
+                                        let found = false
+                                        props.setCartnum(props.cartnum+1)
+                                        props.cartinfo.forEach(cart_food => {
+                                            if(cart_food.name===each_food.name){
+                                                cart_food.value=cart_food.value+1
+                                                found = true
+                                            }
+                                        });
+                                        if (!found){
+                                            props.setCartinfo([...props.cartinfo, {name:each_food.name,type:each_food.type,price_show:each_food.price_show,price_cal:each_food.price_cal,link:each_food.link,value:1}])
                                         }
-                                    });
-                                    if (!found){
-                                        props.setCartinfo([...props.cartinfo, {name:each_food.name,type:each_food.type,price_show:each_food.price_show,price_cal:each_food.price_cal,link:each_food.link,value:1}])
-                                    }
-                                }}>Add</button>
+                                    }}>Add</button>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+    else{
+        return(
+            <div className='menu'>
+                <h1>Little Lemon Menu</h1>
+                <div className='search'>
+                    <label>Search</label>
+                    <input type='text' value={search} onChange={(e)=>{setSearch(e.target.value)}} />
+                </div>
+                <div className="all_foods">
+                {all_foods.map(each_food=>{
+                        if(each_food.name.toLowerCase().includes(search.toLowerCase())){
+                            return(
+                                <div className="each_food">
+                                <img src={each_food.link} alt='Little Lemon Food' />
+                                <h2>{each_food.name}</h2>
+                                <h3>{each_food.type}</h3>
+                                <div className='flex_row'>
+                                    <h3>{each_food.price_show}</h3>
+                                    <button onClick={()=>{
+                                        let found = false
+                                        props.setCartnum(props.cartnum+1)
+                                        props.cartinfo.forEach(cart_food => {
+                                            if(cart_food.name===each_food.name){
+                                                cart_food.value=cart_food.value+1
+                                                found = true
+                                            }
+                                        });
+                                        if (!found){
+                                            props.setCartinfo([...props.cartinfo, {name:each_food.name,type:each_food.type,price_show:each_food.price_show,price_cal:each_food.price_cal,link:each_food.link,value:1}])
+                                        }
+                                    }}>Add</button>
+                                </div>
+                            </div>
+                            )}
+                        return null})}
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Menu
