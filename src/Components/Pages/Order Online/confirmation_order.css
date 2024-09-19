@@ -20,6 +20,15 @@
 .green-container p{
     color: #F4CE14;
 }
+.green-container h3{
+    margin: 0;
+    padding: 0;
+    color: #F4CE14;
+}
+#total_cost{
+    padding-bottom: 3%;
+    font-weight: bold;
+}
 #contact_error{
     color: black;
 }
