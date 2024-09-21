@@ -18,6 +18,7 @@ import chocolateshake from '../../Images/choclate shake.jpg'
 import coffee from '../../Images/coffe.jpg'
 import strawberryshake from '../../Images/strawberry shake.jpg'
 import { useEffect,useState } from 'react'
+import AddtoCart from './add_to_cart'
 
 function Menu(props){
     const all_foods = [
@@ -41,6 +42,15 @@ function Menu(props){
         {name:'Strawberry Shake',type:'Beverage',price_show:'$7.99',price_cal:7.99,link:strawberryshake},
     ]
     const [search,setSearch] = useState('')
+    const[display_cart,setDisplay_cart] = useState(false)
+    useEffect(()=>{
+        const timer  = setTimeout(()=>{
+            setDisplay_cart(false)
+        },1000)
+        return () =>{
+            clearTimeout(timer)
+        }
+    },[display_cart])
     useEffect(()=>{
         console.log(props.cartinfo)
     },[props.cartinfo])
@@ -63,6 +73,7 @@ function Menu(props){
                                     <h3>{each_food.price_show}</h3>
                                     <button onClick={()=>{
                                         let found = false
+                                        setDisplay_cart(true)
                                         props.setCartnum(props.cartnum+1)
                                         props.cartinfo.forEach(cart_food => {
                                             if(cart_food.name===each_food.name){
@@ -79,6 +90,9 @@ function Menu(props){
                         )
                     })}
                 </div>
+                <div style={{display:display_cart?'flex':'none',alignItems: 'center',justifyContent: 'center',}}>
+                                <AddtoCart />
+                                </div>
             </div>
         )
     }
@@ -102,6 +116,7 @@ function Menu(props){
                                     <h3>{each_food.price_show}</h3>
                                     <button onClick={()=>{
                                         let found = false
+                                        setDisplay_cart(true)
                                         props.setCartnum(props.cartnum+1)
                                         props.cartinfo.forEach(cart_food => {
                                             if(cart_food.name===each_food.name){
@@ -117,7 +132,11 @@ function Menu(props){
                             </div>
                             )}
                         return null})}
+
                 </div>
+                <div style={{display:display_cart?'flex':'none',alignItems: 'center',justifyContent: 'center',}}>
+                                       <AddtoCart />
+                                 </div>
             </div>
         )
     }

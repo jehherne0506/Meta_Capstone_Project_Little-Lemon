@@ -12,6 +12,9 @@ function BookingForm(){
     const [ischecked,setIsChecked] = useState()
     const [firstchecked,setFirstchecked] = useState(true)
     const navigate = useNavigate()
+    const scrolltoTop =() =>{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     const formik = useFormik({
         initialValues:{
             name:'',
@@ -33,6 +36,7 @@ function BookingForm(){
                 navigate('/confirmation_reservation',{
                     state:{name:formik.values.name, date:booking_data.date, time:booking_data.time, guests:booking_data.guests, occasion:booking_data.occasion, locations:firstchecked}
                 })
+                scrolltoTop()
             }
         }
     })
