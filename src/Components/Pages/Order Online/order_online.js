@@ -7,6 +7,9 @@ function Order_Online(props){
     const totalItems = props.cartinfo.reduce((sum,each_food) => sum+=each_food.value,0)
     let totalPrice = 0
     const navigate = useNavigate()
+    const scrolltoTop =() =>{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     return(
         <div className="order_online">
             <h1>Your Cart</h1>
@@ -69,7 +72,8 @@ function Order_Online(props){
                 <h2>Order Total: ${(totalPrice+15).toFixed(2)}</h2>
                 <button disabled={totalItems===0?true:false} onClick={()=>{
                     const total = `${(totalPrice+15).toFixed(2)}`
-                    navigate('/confirmation_order',{state:{cost:total,order:props.cartinfo}})}}>Place Order</button>
+                    navigate('/confirmation_order',{state:{cost:total,order:props.cartinfo}})
+                    scrolltoTop()}}>Place Order</button>
             </div>
         </div>
     )
