@@ -75,4 +75,7 @@
     .search{
         width: 70%;
     }
+    .each_food img{
+        padding-top: 0;
+    }
 }
